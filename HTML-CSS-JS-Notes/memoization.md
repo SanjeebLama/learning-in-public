@@ -2,12 +2,12 @@
 
 Memoization is an optimization technique that improves the performance of functions by storing the results of previous computations for the same inputs.
 
-Here's the process:
+**Here's the process:**
 
-1. Cache: A cache is created to store previously calculated results based on their input.
-2. Check: When the function is called, it first checks the cache for the result with the current input.
-3. Reuse: If the result is found in the cache, it's returned immediately, avoiding redundant calculations.
-4. Compute & Store: If the result isn't cached, the function performs the calculation, stores the result for the input in the cache, and then returns the result.
+1. **Cache**: A cache is created to store previously calculated results based on their input.
+2. **Check**: When the function is called, it first checks the cache for the result with the current input.
+3. **Reuse**: If the result is found in the cache, it's returned immediately, avoiding redundant calculations.
+4. **Compute & Store**: If the result isn't cached, the function performs the calculation, stores the result for the input in the cache, and then returns the result.
 
 ### Benefits:
 
@@ -16,9 +16,9 @@ Here's the process:
 
 ### Real-world use cases:
 
-1. Expensive Calculations: Memoization is useful for functions involving complex calculations like Fibonacci sequence, factorial, or dynamic programming algorithms.
-2. Data Fetching: When repeatedly fetching data from APIs or local storage, you can avoid redundant requests by caching the retrieved data with its input parameters.
-3. UI Components: In React applications, memoizing expensive rendering logic for components with frequent re-renders can significantly improve performance.
+1. **Expensive Calculations**: Memoization is useful for functions involving complex calculations like Fibonacci sequence, factorial, or dynamic programming algorithms.
+2. **Data Fetching**: When repeatedly fetching data from APIs or local storage, you can avoid redundant requests by caching the retrieved data with its input parameters.
+3. **UI Components**: In React applications, memoizing expensive rendering logic for components with frequent re-renders can significantly improve performance.
 
 ### Simple Example:
 
