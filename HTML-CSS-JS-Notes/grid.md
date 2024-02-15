@@ -2,8 +2,7 @@
 | ------- | ---------------------------------------------------------------------------------------------------------------- 
 | Layout1 | ![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/ddf16f65-8298-4c7c-be28-fe73fb472feb) | 
 | Layout2 |![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/970a2fd2-cef9-4815-807d-b346dc301097) |
-
-
+| Layout3 (Nested Grid) |![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/2971dce7-e176-4d38-87a2-4e288ff80de3)|
 
 # Grid
 
@@ -275,6 +274,166 @@ div:nth-child(6) {
   grid-column: span 3;
   align-self: center;
   background-color: var(--teal);
+}
+
+```
+## Layout 3
+
+
+| Desktop  | Tablet  | Mobile  | 
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+|![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/2971dce7-e176-4d38-87a2-4e288ff80de3)|![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/35a43109-d02b-4907-b4b3-67fccae5818f)|![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/32eb8dfc-ce4a-40d9-a055-6b3eb9cc5887)|
+
+
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Grid Example 3</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Buddhist Monk</h1>
+    </header>
+    <main class="grid-container">
+      <article class="featured">
+        <img
+          src="https://images.unsplash.com/photo-1558868540-3b5e8ca26dc2?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Buddhist Monk Sitting near lake"
+          class="featured img"
+        />
+        <div class="">
+          <h2>Exploring the Life of a Buddhist Monk</h2>
+          <p>
+            Dive into the tranquil existence of Buddhist monks as they embrace
+            simplicity, meditation, and detachment from worldly desires in
+            pursuit of spiritual enlightenment.
+          </p>
+        </div>
+      </article>
+
+      <article>
+        <img
+          src="https://images.unsplash.com/flagged/photo-1575253024459-3150df1a24bc?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Monks crossing the bridge"
+        />
+        <div class="">
+          <h2>The Travelling Monks</h2>
+          <p>
+            Embark on a spiritual odyssey with travelling monks who wander
+            across landscapes, spreading teachings, and seeking enlightenment.
+          </p>
+        </div>
+      </article>
+
+      <article>
+        <img
+          src="https://images.unsplash.com/photo-1529546628049-75f334518ab5?q=80&w=1769&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Monks Praying"
+        />
+        <div class="">
+          <h2>The Daily Rituals</h2>
+          <p>
+            Discover the disciplined lifestyle of Buddhist monks, from pre-dawn
+            meditations to alms rounds and communal chanting, as they follow
+            ancient traditions on their path to inner peace.
+          </p>
+        </div>
+      </article>
+
+      <article>
+        <img
+          src="https://images.unsplash.com/photo-1542319054772-19bc40f49235?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Children monk studying"
+        />
+        <div class="">
+          <h2>Journey of Children Monks</h2>
+          <p>
+            Explore how these children embrace Buddhist teachings, meditation
+            practices, and traditional rituals, shaping their path towards a
+            life of dedication and wisdom from an early age.
+          </p>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>
+
+```
+
+
+```css
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;800&family=VT323&display=swap");
+
+body {
+  margin: 20px;
+  font-family: "Poppins";
+  background: #d1dedd;
+}
+h1,
+h2,
+h3 {
+  color: #767f7e;
+}
+p {
+  color: #828b8a;
+  text-align: left;
+}
+
+header {
+  max-width: 1200px;
+  margin: 40px auto;
+  border-bottom: 1px solid #bbc7c7;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+article.featured {
+  grid-column: span 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  border-bottom: 1px solid #bbc7c7;
+  padding-bottom: 40px;
+}
+
+article img {
+  width: 100%;
+  border: 4px solid #fff;
+  border-radius: 8px;
+}
+
+article p h3 {
+  margin: 20px 10px;
+}
+
+@media screen and (max-width: 980px) {
+  article {
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  article,
+  article.featured {
+    display: block;
+    margin: 0 20px;
+  }
 }
 
 ```
