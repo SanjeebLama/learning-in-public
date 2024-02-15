@@ -1,45 +1,44 @@
-| Name  | Desktop | Mobile |
-|-------|---------|---------|
-| Layout1 | ![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/ddf16f65-8298-4c7c-be28-fe73fb472feb)| ![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/92dfc8d0-4dca-4357-99af-fd0bf0078002)|
+| Name    | Desktop                                                                                                          | Mobile                                                                                                           |
+| ------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| Layout1 | ![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/ddf16f65-8298-4c7c-be28-fe73fb472feb) | ![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/92dfc8d0-4dca-4357-99af-fd0bf0078002) |
 
 # Grid
+
 - CSS Grid is a layout system in CSS for creating two-dimensional grid-based layouts.
 - It simplifies the process of arranging elements on a webpage, offering precise control over layout design without complicated hacks.
 
 ### Parent Properties (Applied to Grid Container):
 
-| Property                   | Description                                                                                                                           |
-|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| `display: grid`            | Defines a grid container and turns its children into grid items.                                                                      |
-| `grid-template-columns`    | Specifies the size of the columns in a grid layout.                                                                                  |
-| `grid-template-rows`       | Specifies the size of the rows in a grid layout.                                                                                     |
-| `grid-template-areas`      | Defines named grid areas which can be referenced when placing grid items.                                                             |
-| `grid-gap`                 | Sets the size of the gap between grid items.                                                                                        |
-| `grid-row-gap`             | Sets the size of the gap between rows in a grid layout.                                                                              |
-| `grid-column-gap`          | Sets the size of the gap between columns in a grid layout.                                                                           |
-| `grid-auto-columns`        | Sets the size of implicitly-created columns in a grid layout.                                                                        |
-| `grid-auto-rows`           | Sets the size of implicitly-created rows in a grid layout.                                                                           |
-| `grid-auto-flow`           | Defines how auto-placed items are placed in the grid layout.                                                                         |
-| `justify-content`          | Aligns the grid along the inline (row) axis within the grid container.                                                                |
-| `align-content`            | Aligns the grid along the block (column) axis within the grid container.                                                              |
-| `place-content`            | A shorthand for `align-content` and `justify-content`.                                                                               |
+| Property                | Description                                                               |
+| ----------------------- | ------------------------------------------------------------------------- |
+| `display: grid`         | Defines a grid container and turns its children into grid items.          |
+| `grid-template-columns` | Specifies the size of the columns in a grid layout.                       |
+| `grid-template-rows`    | Specifies the size of the rows in a grid layout.                          |
+| `grid-template-areas`   | Defines named grid areas which can be referenced when placing grid items. |
+| `grid-gap`              | Sets the size of the gap between grid items.                              |
+| `grid-row-gap`          | Sets the size of the gap between rows in a grid layout.                   |
+| `grid-column-gap`       | Sets the size of the gap between columns in a grid layout.                |
+| `grid-auto-columns`     | Sets the size of implicitly-created columns in a grid layout.             |
+| `grid-auto-rows`        | Sets the size of implicitly-created rows in a grid layout.                |
+| `grid-auto-flow`        | Defines how auto-placed items are placed in the grid layout.              |
+| `justify-content`       | Aligns the grid along the inline (row) axis within the grid container.    |
+| `align-content`         | Aligns the grid along the block (column) axis within the grid container.  |
+| `place-content`         | A shorthand for `align-content` and `justify-content`.                    |
 
 ### Child Properties (Applied to Grid Items):
 
-| Property                   | Description                                                                                                                           |
-|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| `grid-column`              | Specifies where an item should be placed in terms of the grid columns it should span.                                                 |
-| `grid-row`                 | Specifies where an item should be placed in terms of the grid rows it should span.                                                    |
-| `justify-self`             | Aligns a grid item along the inline (row) axis within its grid area.                                                                 |
-| `align-self`               | Aligns a grid item along the block (column) axis within its grid area.                                                               |
-| `place-self`               | A shorthand for `align-self` and `justify-self`.                                                                                     |
+| Property       | Description                                                                           |
+| -------------- | ------------------------------------------------------------------------------------- |
+| `grid-column`  | Specifies where an item should be placed in terms of the grid columns it should span. |
+| `grid-row`     | Specifies where an item should be placed in terms of the grid rows it should span.    |
+| `justify-self` | Aligns a grid item along the inline (row) axis within its grid area.                  |
+| `align-self`   | Aligns a grid item along the block (column) axis within its grid area.                |
+| `place-self`   | A shorthand for `align-self` and `justify-self`.                                      |
 
 These properties allow for the creation of complex grid layouts and the precise placement of grid items within them by controlling the grid container and individual grid items separately.
 
-
-
-
 ## Layout 1
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -61,10 +60,7 @@ These properties allow for the creation of complex grid layouts and the precise 
     </div>
   </body>
 </html>
-
 ```
-
-
 
 ```css
 :root {
@@ -162,5 +158,18 @@ footer {
       "footer";
   }
 }
-
 ```
+
+## Resources and References:
+
+1. https://www.youtube.com/playlist?list=PL4cUxeGkcC9hk02lFb6EkdXF2DYGl4Gg4
+
+2. https://www.youtube.com/watch?v=68O6eOGAGqA&t=5s
+
+### Layout
+
+- https://www.youtube.com/watch?v=i1FeOOhNnwU
+
+- https://www.youtube.com/watch?v=hs3piaN4b5I
+
+- https://www.youtube.com/watch?v=3elGSZSWTbM
