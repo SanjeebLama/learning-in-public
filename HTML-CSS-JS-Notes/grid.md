@@ -1,6 +1,9 @@
-| Name    | Desktop                                                                                                          | Mobile                                                                                                           |
-| ------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| Layout1 | ![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/ddf16f65-8298-4c7c-be28-fe73fb472feb) | ![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/92dfc8d0-4dca-4357-99af-fd0bf0078002) |
+| Name    | Preview                                                                                                          | 
+| ------- | ---------------------------------------------------------------------------------------------------------------- 
+| Layout1 | ![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/ddf16f65-8298-4c7c-be28-fe73fb472feb) | 
+| Layout2 |![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/970a2fd2-cef9-4815-807d-b346dc301097) |
+
+
 
 # Grid
 
@@ -38,6 +41,9 @@
 These properties allow for the creation of complex grid layouts and the precise placement of grid items within them by controlling the grid container and individual grid items separately.
 
 ## Layout 1
+| Name    | Desktop                                                                                                          | Mobile                                                                                                           |
+| ------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| Layout1 | ![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/ddf16f65-8298-4c7c-be28-fe73fb472feb) | ![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/92dfc8d0-4dca-4357-99af-fd0bf0078002) |
 
 ```html
 <!DOCTYPE html>
@@ -161,6 +167,9 @@ footer {
 ```
 
 ## Layout 2
+| Name    | Preview                                                                                                          | 
+| ------- | ---------------------------------------------------------------------------------------------------------------- |
+| Layout2 |![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/970a2fd2-cef9-4815-807d-b346dc301097) |
 
 ```html
 <!DOCTYPE html>
@@ -185,14 +194,35 @@ footer {
 ```
 
 ```css
+:root {
+  --main-radius: 5px;
+  --main-padding: 5px;
+
+  --blue: #2f3c7e;
+  --pink: #ff69b4;
+  --charcoal: #101820;
+  --bright-yellow: #fee715;
+  --teal: #008080;
+  --coral: #ff7f50;
+  --slate-gray: #708090;
+  --magenta: #ff00ff;
+  --goldenrod: #daa520;
+  --lavender: #e6e6fa;
+  --olive: #808000;
+  --ruby: #e0115f;
+  --sky-blue: #87ceeb;
+  --peach: #ffdab9;
+}
+
 body {
   box-sizing: border-box;
   margin: 30px;
+  background-color: #e6e6fa;
 }
 
 .grid-container {
-  background-color: #e6e6fa;
-  max-width: 500px;
+  background-color: rgba(0, 0, 30, 0.1);
+  max-width: 900px;
   margin: 0 auto;
   display: grid;
   row-gap: 6px;
@@ -209,36 +239,44 @@ body {
   border: 1px solid #101820;
   padding: 4px;
   text-align: center;
+  color: white;
 }
 
 div:nth-child(1) {
   grid-column: 1/3;
   justify-self: start;
+  background-color: var(--goldenrod);
 }
 
 div:nth-child(2) {
   grid-column: span 3;
   align-self: center;
+  background-color: var(--coral);
 }
 
 div:nth-child(3) {
   justify-self: end;
   align-self: start;
+  background-color: var(--blue);
 }
 
 div:nth-child(4) {
   grid-column: 2/6;
+  background-color: var(--pink);
 }
 
 div:nth-child(5) {
   grid-column: span 3;
   align-self: flex-end;
+  background-color: var(--olive);
 }
 
 div:nth-child(6) {
   grid-column: span 3;
   align-self: center;
+  background-color: var(--teal);
 }
+
 ```
 
 ## Resources and References:
