@@ -3,6 +3,7 @@
 | Layout1 | ![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/ddf16f65-8298-4c7c-be28-fe73fb472feb) | 
 | Layout2 |![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/970a2fd2-cef9-4815-807d-b346dc301097) |
 | Layout3 (Nested Grid) |![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/2971dce7-e176-4d38-87a2-4e288ff80de3)|
+| Layout4 (Masonry) | ![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/8ce8196f-572b-4a18-beff-c26003aa35b9)|
 
 # Grid
 
@@ -278,8 +279,6 @@ div:nth-child(6) {
 
 ```
 ## Layout 3
-
-
 | Desktop  | Tablet  | Mobile  | 
 | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
 |![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/2971dce7-e176-4d38-87a2-4e288ff80de3)|![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/35a43109-d02b-4907-b4b3-67fccae5818f)|![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/32eb8dfc-ce4a-40d9-a055-6b3eb9cc5887)|
@@ -433,6 +432,227 @@ article p h3 {
   article.featured {
     display: block;
     margin: 0 20px;
+  }
+}
+
+```
+
+## Layout 4 (Masonry)
+| Desktop  | Tablet  | Mobile  | 
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| ![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/8ce8196f-572b-4a18-beff-c26003aa35b9)|![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/97bdc23a-519a-497f-bf88-18ed4f487318)|![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/a7631ad2-682a-4999-a441-08cb700b329c)|
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Grid Example 3</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/">Articles</a>
+
+        <h1>
+          <div class="">Express</div>
+          <div class="">Yourself</div>
+        </h1>
+        <a href="/">Guides</a>
+        <a href="/">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="short">
+        <h3>A note about style</h3>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam,
+          reprehenderit.
+        </p>
+        <a href="">Read more</a>
+      </div>
+      <div class="tall">
+        <img
+          src="https://plus.unsplash.com/premium_photo-1706727290844-088603c0a79c?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="model"
+        />
+      </div>
+      <div class="short">
+        <h3>A note about style</h3>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam,
+          reprehenderit.
+        </p>
+        <a href="">Read more</a>
+      </div>
+      <div class="tall">
+        <img
+          src="https://images.unsplash.com/photo-1707834831436-a61faa9e2f2c?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="model"
+        />
+      </div>
+      <div class="tall">
+        <img
+          src="https://plus.unsplash.com/premium_photo-1707793860917-3f7022a70dce?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="model"
+        />
+      </div>
+      <div class="tall">
+        <h3>A note about style</h3>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam,
+          reprehenderit.
+        </p>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas
+          perspiciatis natus sit dicta repellendus quia mollitia. Voluptas ullam
+          ipsa dolorem.
+        </p>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse
+          accusamus possimus asperiores fugiat at nostrum odio repellendus
+          voluptates. Iusto asperiores voluptate similique maiores ut omnis
+          dolores corporis, tenetur excepturi quis?
+        </p>
+        <a href="">Read more</a>
+      </div>
+      <div class="short">
+        <h3>A note about style</h3>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam,
+          reprehenderit.
+        </p>
+        <a href="">Read more</a>
+      </div>
+      <div class="tall">
+        <img
+          src="https://plus.unsplash.com/premium_photo-1700802066668-d3aa7fef7069?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="model"
+        />
+      </div>
+      <div class="short">
+        <h3>A note about style</h3>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam,
+          reprehenderit.
+        </p>
+        <a href="">Read more</a>
+      </div>
+      <div class="short">
+        <h3>A note about style</h3>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam,
+          reprehenderit.
+        </p>
+        <a href="">Read more</a>
+      </div>
+    </main>
+  </body>
+</html>
+
+```
+
+
+```css
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;800&family=VT323&display=swap");
+
+body {
+  margin: 0px;
+  font-family: "Poppins";
+  background: #f7f7f7;
+}
+
+header {
+  background: #fff;
+  padding: 10px;
+}
+
+nav {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  text-align: center;
+  align-items: center;
+}
+
+nav h1 {
+  text-transform: uppercase;
+  line-height: 1em;
+}
+
+nav h1 div:first-child {
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+nav h1 div:last-child {
+  font-weight: 400;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+}
+
+main {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 20px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  /* grid-auto-rows: Sets the size of implicitly-created rows in a grid layout.  */
+  grid-auto-rows: 250px;
+  gap: 30px;
+
+  /* border: 4px solid saddlebrown; */
+}
+
+main div {
+  overflow: hidden;
+  background: #fff;
+  border-radius: 6px;
+  border: 16px solid #fff;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.05);
+}
+
+main img {
+  min-width: 100%;
+  height: 100%;
+}
+
+main .short {
+  grid-row: span 1;
+}
+
+main .tall {
+  grid-row: span 2;
+}
+
+@media screen and (max-width: 960px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  main {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin-top: 20px;
+  }
+  nav {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  nav h1 {
+    grid-column: 1 / span 4;
+    grid-row: 1;
   }
 }
 
