@@ -160,6 +160,87 @@ footer {
 }
 ```
 
+## Layout 2
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Grid Example 2</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="grid-container">
+      <div class="">1</div>
+      <div class="">2</div>
+      <div class="">3</div>
+      <div class="">4</div>
+      <div class="">5</div>
+      <div class="">6</div>
+    </main>
+  </body>
+</html>
+```
+
+```css
+body {
+  box-sizing: border-box;
+  margin: 30px;
+}
+
+.grid-container {
+  background-color: #e6e6fa;
+  max-width: 500px;
+  margin: 0 auto;
+  display: grid;
+  row-gap: 6px;
+  column-gap: 4px;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 100px 200px 300px;
+
+  /* by default */
+  justify-items: stretch;
+  align-items: stretch;
+}
+
+.grid-container > * {
+  border: 1px solid #101820;
+  padding: 4px;
+  text-align: center;
+}
+
+div:nth-child(1) {
+  grid-column: 1/3;
+  justify-self: start;
+}
+
+div:nth-child(2) {
+  grid-column: span 3;
+  align-self: center;
+}
+
+div:nth-child(3) {
+  justify-self: end;
+  align-self: start;
+}
+
+div:nth-child(4) {
+  grid-column: 2/6;
+}
+
+div:nth-child(5) {
+  grid-column: span 3;
+  align-self: flex-end;
+}
+
+div:nth-child(6) {
+  grid-column: span 3;
+  align-self: center;
+}
+```
+
 ## Resources and References:
 
 1. https://www.youtube.com/playlist?list=PL4cUxeGkcC9hk02lFb6EkdXF2DYGl4Gg4
