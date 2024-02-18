@@ -64,7 +64,7 @@ duration: 1
 
 ```
 
-- Random values](https://gsap.com/docs/v3/GSAP/gsap.to()#random-values)
+- [Random values](<https://gsap.com/docs/v3/GSAP/gsap.to()#random-values>)
 
 ```js
 gsap.to(".class", {
@@ -102,7 +102,7 @@ gsap.from(".box", {
 });
 ```
 
-> > > However, from tweens can be a little tricky. One of the (most common GSAP mistakes)[https://gsap.com/resources/mistakes/] is misusing them. Make sure to use them responsibly!
+> > > However, from tweens can be a little tricky. One of the [most common GSAP mistakes](https://gsap.com/resources/mistakes/) is misusing them. Make sure to use them responsibly!
 
 #### `gsap.fromTo()`:
 
@@ -131,7 +131,7 @@ tween.progress(0.5);
 tween.play();
 ```
 
-In simpler terms, gsap.to() makes things change from their current state to a new state, from makes things start from a certain state and change to another, and fromTo lets you say exactly where things should start and end up.
+In simpler terms, `gsap.to()` makes things change from their current state to a new state, `gsap.from()` makes things start from a certain state and change to it's natural state, and `gsap.fromTo()` lets you say exactly where things should start and end up.
 
 ### For best performance animate CSS Transform values and opacity
 
@@ -177,8 +177,8 @@ some of the special properties that can be used with GSAP animations:
 
 | Property            | Description                                                                                                                                    | Example Values                                                 |
 | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
-| `duration`          | The duration of the animation, specified in seconds or milliseconds.                                                                           | `1` (1 second), `1000` (1000 milliseconds)                     |
-| `delay`             | The delay before the animation starts, specified in seconds or milliseconds.                                                                   | `0.5` (0.5 seconds), `500` (500 milliseconds)                  |
+| `duration`          | The duration of the animation, specified in seconds.                                                                                           | `1` (1 second) = `1000` (1000 milliseconds)                    |
+| `delay`             | The delay before the animation starts, specified in seconds.                                                                                   | `0.5` (0.5 seconds) =`500` (500 milliseconds)                  |
 | `ease`              | The easing function applied to the animation, controlling the acceleration and deceleration of the motion.                                     | `"power2.inOut"`, `"elastic.out(1, 0.3)"`                      |
 | `repeat`            | The number of times the animation should repeat.                                                                                               | `2` (repeats twice), `Infinity` or `-1` (repeats indefinitely) |
 | `yoyo`              | Whether the animation should alternate direction on each repeat.                                                                               | `true`, `false`                                                |
@@ -191,7 +191,7 @@ some of the special properties that can be used with GSAP animations:
 | `overwrite`         | Determines how the animation behaves if it overlaps with another animation targeting the same properties.                                      | `"auto"`, `"none"`, `"all"`                                    |
 | `autoAlpha`         | Automatically handles opacity and visibility of the element during the animation.                                                              | `0` (completely transparent), `1` (fully visible)              |
 | `immediateRender`   | Determines whether the animation should immediately render without delay.                                                                      | `true`, `false`                                                |
-| `stagger`           | Adds a [stagger](https://gsap.com/resources/getting-started/Staggers) effect to the animation, applying a delay to each element in a sequence. | `0.2` (0.2 seconds), `100` (100 milliseconds)                  |
+| `stagger`           | Adds a [stagger](https://gsap.com/resources/getting-started/Staggers) effect to the animation, applying a delay to each element in a sequence. | `0.2` (0.2 seconds),                                           |
 
 - A stagger object gives you greater control over where the staggers start from and how the timing is dispersed.
 
@@ -211,14 +211,14 @@ gsap.to("#divSection img", {
 
 #### Ease format used in GSAP:
 
-[Ease Visualizer](https://gsap.com/docs/v3/Eases/)
-Choosing the right ease is one of the most important parts of scripted animation.
+- [Ease Visualizer](https://gsap.com/docs/v3/Eases/)
 
-- eases dictate the rate of change of an animation
-- eases dictate the direction of change of an animation (bounce, back, elastic, etc)
-- steep curves cause quick rate of change
-- flat curves cause slow rate of change
-- you can create your own ease curve using Custom Ease.
+- Choosing the right ease is one of the most important parts of scripted animation.
+  - eases dictate the rate of change of an animation
+  - eases dictate the direction of change of an animation (bounce, back, elastic, etc)
+  - steep curves cause quick rate of change
+  - flat curves cause slow rate of change
+  - you can create your own ease curve using Custom Ease.
 
 | Ease Format  | Description                                                                                                                                                      | Example                                                  |
 | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
