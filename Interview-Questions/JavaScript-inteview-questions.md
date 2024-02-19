@@ -848,3 +848,15 @@ if (typeof Worker !== "undefined") {
 ```
 
 </details>
+
+### Q23. Is Javascript single-threaded or multi-threaded
+
+<details>
+  <summary> <b>Click to view the answer.</b> </summary>
+
+- JavaScript is primarily single-threaded. In web browsers, JavaScript runs on a single thread known as the "main thread". This means that JavaScript code is executed sequentially, one statement at a time, and can only perform one task at a time.
+
+- However, JavaScript can also work with asynchronous programming patterns such as callbacks, promises, and async/await, which allow non-blocking execution of code. Asynchronous operations, such as fetching data from a server or waiting for user input, are handled by browser APIs, which run concurrently with the main thread. This allows JavaScript to handle I/O operations efficiently without blocking the main thread.
+
+- While JavaScript itself is single-threaded, modern web browsers leverage multi-threading capabilities for tasks such as rendering, networking, and handling user interactions. For example, browsers use separate threads for rendering the UI, executing JavaScript, and handling network requests. This multi-threaded architecture ensures a responsive user experience while still maintaining the single-threaded nature of JavaScript execution.
+</details>
