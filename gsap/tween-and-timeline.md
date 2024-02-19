@@ -246,4 +246,69 @@ Study the methods and properties of the **GSAP object and Tween class**. I can't
 
 # Timeline
 
-A container for multiple tweens.
+- A container for multiple tweens and other timelines.
+- A timeline is created with gsap.timeline();
+- All tweens in a timeline naturally play one after the other.
+
+> A Timeline is a powerful sequencing tool that acts as a container for tweens and other timelines, making it simple to control them as a whole and precisely manage their timing. Without Timelines, building complex sequences would be far more cumbersome because you'd need to use a delay for every animation. For example:
+
+```js
+//WITH Timelines (cleaner, more versatile)
+var tl = gsap.timeline({ repeat: 2, repeatDelay: 1 });
+tl.to("#id", { x: 100, duration: 1 });
+tl.to("#id", { y: 50, duration: 1 });
+tl.to("#id", { opacity: 0, duration: 1 });
+
+// then we can control the whole thing easily...
+tl.pause();
+tl.resume();
+tl.seek(1.5);
+tl.reverse();
+```
+
+#### Here's a table summarizing the positioning options for animations in a GSAP timeline:
+
+| Position Parameter | Description                                                                                                              | Example                                     |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------- |
+| Absolute time      | Specifies an absolute time (in seconds) measured from the start of the timeline.                                         | `tl.to(".class", { x: 100 }, 3);`           |
+| Label              | Refers to a label defined in the timeline. If the label doesn't exist, it's added to the end of the timeline.            | `tl.to(".class", { x: 100 }, "someLabel");` |
+| "<"                | Points to the start of the previous animation, effectively inserting the new animation at the start of the previous one. | `tl.to(".class", { x: 100 }, "<");`         |
+| ">"                | Points to the end of the previous animation, effectively inserting the new animation at the end of the previous one.     | `tl.to(".class", { x: 100 }, ">");`         |
+| Relative values    | Uses complex strings with "+=" or "-=" prefixes for relative positioning.                                                | `tl.to(".class", { x: 100 }, "<+=2");`      |
+| Percentage-based   | Specifies positioning based on a percentage of total animation duration.                                                 | `tl.to(".class", { x: 100 }, "+=50%");`     |
+
+These positioning options allow precise control over where animations are placed within a GSAP timeline, enabling you to create complex sequences and coordinate multiple animations with ease.
+
+> The secret to doing awesome animation in sequencing is the position parameters.
+
+**(Control Panel)[https://codepen.io/snorkltv/pen/oNNwNBr?editors=1000]**
+
+```js
+var animation = gsap
+  .timeline()
+  .from("#demo", { duration: 1, opacity: 0 })
+  .from("#title", { opacity: 0, duration: 3, scale: 0, ease: "back" })
+  .from(
+    "#freds img",
+    { y: 160, stagger: 0.5, duration: 0.8, ease: "back" },
+    "+=0.5"
+  )
+  .add("test") // start animation from here
+  .from("#time", { xPercent: 100, duration: 1, ease: "bounce" });
+
+document.getElementById("play").onclick = () => animation.play();
+document.getElementById("pause").onclick = () => animation.pause();
+document.getElementById("reverse").onclick = () => animation.reverse();
+document.getElementById("restart").onclick = () => animation.restart();
+document.getElementById("test").onclick = () => animation.play("test"); // this is the add("test") control
+```
+
+```html
+<div>
+  <button id="play">play</button>
+  <button id="pause">pause</button>
+  <button id="reverse">reverse</button>
+  <button id="restart">restart</button>
+  <button id="test">test</button>
+</div>
+```
