@@ -25,6 +25,11 @@ has
 
 - Asynchronous Callbacks
 
+![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/3640447a-31ed-4cf3-b9d6-dae1ae5089d7)
+
+![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/33b78efb-ba91-45dd-bcc1-111fe9511afc)
+
+
 ### Resources
 
 - [What the heck is the event loop anyway? | Philip Roberts](https://www.youtube.com/watch?v=8aGhZQkoFbQ)
