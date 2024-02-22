@@ -81,6 +81,9 @@ JS has
 - It includes all the components necessary to interpret, compile, and execute JavaScript code.
 - This environment provides various features and functionalities that allow JavaScript programs to run effectively.
 
+![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/53ba6ed5-607a-47f1-b25e-0f67ac9bf2c9)
+[src](https://vahid.blog/post/2021-03-21-understanding-the-javascript-runtime-environment-and-dom-nodes/)
+
 **A JavaScript runtime typically consists of several key components:**
 
 1. **JavaScript Engine**:
