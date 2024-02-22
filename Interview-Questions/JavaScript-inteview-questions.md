@@ -860,3 +860,102 @@ if (typeof Worker !== "undefined") {
 
 - While JavaScript itself is single-threaded, modern web browsers leverage multi-threading capabilities for tasks such as rendering, networking, and handling user interactions. For example, browsers use separate threads for rendering the UI, executing JavaScript, and handling network requests. This multi-threaded architecture ensures a responsive user experience while still maintaining the single-threaded nature of JavaScript execution.
 </details>
+
+### Q24. How does Javascript handle asynchronous operations?
+
+<details>
+  <summary> <b>Click to view the answer.</b> </summary>
+
+JavaScript handles asynchronous operations using non-blocking I/O and an event-driven architecture.
+
+- Asynchronous tasks are managed by the **event loop**, which continuously checks the call stack and task queue.
+- **Callback functions** are commonly used to handle asynchronous tasks, allowing code to execute once an operation completes.
+- **Browser APIs (in web environments)** provide functions for asynchronous tasks like fetching data or setting timers.
+- **Promises and async/await** (ES6+) offer alternative approaches for working with asynchronous code, improving readability and maintainability.
+
+</details>
+
+### Q25. How does Javascript know when a Promise is fulfilled and executes the callback?
+
+<details>
+  <summary> <b>Click to view the answer.</b> </summary>
+
+JavaScript knows when a Promise is fulfilled and executes the callback through the event loop and microtask queue mechanism. Here's how it works:
+
+1. **Promise Resolution**:
+
+- When a Promise is resolved (either with a value or another Promise), it schedules its `then` and `catch` callbacks to be executed.
+
+2. **Microtask Queue**:
+
+- Promises use microtasks, which are a type of task that has higher priority than regular tasks (macrotasks) such as setTimeout callbacks and DOM events.
+- Microtasks are placed in the microtask queue.
+
+3. **Event Loop**:
+
+- The event loop continuously checks the call stack and microtask queue.
+- When the call stack is empty, it picks the first microtask from the microtask queue and executes it.
+
+4. **Executing Callbacks**:
+
+- When a Promise is resolved, its `then` callback is queued as a microtask.
+- When all synchronous code in the current execution context is completed, the event loop picks up the microtask from the microtask queue and executes the `then` callback.
+
+In summary, JavaScript knows when a Promise is fulfilled and executes the callback by scheduling the callback as a microtask, which is then executed by the event loop when the call stack is empty. This ensures that Promise callbacks are executed in a predictable order and with higher priority than other asynchronous tasks.
+
+</details>
+
+### Q26. How does Javascript know when a Promise is fulfilled and executes the callback?
+
+<details>
+  <summary> <b>Click to view the answer.</b> </summary>
+  
+Here's a comparison table highlighting the main differences between Promises and Observables:
+
+| Feature         | Promises                                                      | Observables                                                             |
+| --------------- | ------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| Lazy Evaluation | Not lazy. Promises start executing immediately upon creation. | Lazy. Observables do not start executing until they are subscribed to.  |
+| Multiple Values | Not inherently capable of emitting multiple values.           | Can emit multiple values over time.                                     |
+| Cancellation    | Not directly cancellable.                                     | Can be unsubscribed from, effectively cancelling the ongoing operation. |
+| Error Handling  | Uses `catch()` for error handling.                            | Uses `error()` callback or `catch()` for error handling.                |
+| Asynchronous    | Primarily used for handling asynchronous operations.          | Can handle both synchronous and asynchronous data streams.              |
+| Composition     | Chains with `.then()` and `.catch()` methods for composition. | Can be composed using operators like `map`, `filter`, `mergeMap`, etc.  |
+| Built-in        | Built into JavaScript since ECMAScript 2015 (ES6).            | Provided by libraries like RxJS, not built into JavaScript natively.    |
+
+In summary, Promises are primarily used for handling asynchronous operations and represent a single value over time, while Observables are more versatile and can handle both synchronous and asynchronous data streams, emitting multiple values over time. Promises are built into JavaScript, whereas Observables require a library like RxJS for implementation.
+
+</details>
+
+### Q27. What is the difference between Promise.all() and Promise.allSettled() in table format?
+
+<details>
+  <summary> <b>Click to view the answer.</b> </summary>
+  Here's a comparison table highlighting the main differences between `Promise.all()` and `Promise.allSettled()`:
+
+| Feature         | `Promise.all()`                                                                                                                                 | `Promise.allSettled()`                                                                                                                                                      |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Resolves When   | Resolves when all promises in the array are resolved successfully.                                                                              | Resolves when all promises in the array have settled (either resolved or rejected), regardless of the outcome.                                                              |
+| Result          | Returns a promise that resolves with an array of resolved values from each promise.                                                             | Returns a promise that resolves with an array of objects containing the outcome of each promise (whether fulfilled or rejected), along with the respective value or reason. |
+| Handling Errors | If any promise in the array is rejected, the entire `Promise.all()` call is rejected immediately with the reason of the first rejected promise. | Does not fail fast. Even if some promises are rejected, `Promise.allSettled()` waits for all promises to settle before resolving.                                           |
+| Use Case        | Suitable when you need all promises to succeed and want to work with their results collectively.                                                | Suitable when you want to know the outcome of all promises in the array, regardless of whether they succeed or fail, and handle each promise's result individually.         |
+
+In summary, `Promise.all()` resolves when all promises in the array are successfully resolved and fails fast if any promise is rejected, while `Promise.allSettled()` resolves when all promises in the array have settled, allowing you to handle each promise's outcome individually, regardless of success or failure.
+
+</details>
+
+### Q28. AJAX request
+
+<details>
+  <summary> <b>Click to view the answer.</b> </summary>
+
+- AJAX (Asynchronous JavaScript and XML) is a technique used in web development to send and receive data from a server asynchronously **without requiring a full page refresh**.
+- It allows web pages to update content dynamically, making them more interactive and responsive to user actions.
+
+- With AJAX, you can make HTTP requests from a web page to a server in the background, fetch data from the server, and update parts of the page with the retrieved data without reloading the entire page.
+- This enables the development of web applications that feel more like desktop applications, as they can update content seamlessly without interrupting the user's experience.
+
+- The term "XML" in AJAX is historical and refers to the fact that XML was often used as the data format for communication between the client and server. However, nowadays, JSON (JavaScript Object Notation) is more commonly used due to its simplicity and ease of parsing in JavaScript.
+
+> In summary, AJAX allows web pages to communicate with a server in the background, fetch data, and update content dynamically without requiring a full page reload, resulting in a smoother and more interactive user experience.
+
+</details>
