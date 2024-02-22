@@ -13,10 +13,15 @@
 
 - JavaScript is single-threaded, meaning it can only execute one piece of code at a time.
 - The call stack keeps track of the currently executing function and its execution context.
+- The call stack is a mechanism provided by the JavaScript engine (like V8) to keep track of function calls in your code.
+- It's part of the JavaScript runtime environment.
+- When a function is called, it's added to the top of the call stack, and when a function returns (completes execution), it's removed from the call stack.
 
-2. **Callback Queue**:
+2. **Callback Queue TASK Queue / Event Queue**:
 
 - Asynchronous operations, such as setTimeout, AJAX requests, and event listeners, are executed outside the normal flow of execution and placed in the callback queue _once they are completed_.
+- The task queue is another mechanism provided by the JavaScript runtime environment.
+- It's where asynchronous events and their callbacks are placed after they have been processed by browser APIs
 
 3. **Event Loop**:
 
@@ -68,8 +73,49 @@ JS has
 
 **Callback function**
 
-- any function that another functions call
-- or asynchronous callback
+- a function that is _passed as an argument to another function, and it gets executed later, usually after some asynchronous operation_ or event occurs.
+
+### JavaScript Runtime:
+
+- JavaScript runtime refers to the environment in which JavaScript code is executed.
+- It includes all the components necessary to interpret, compile, and execute JavaScript code.
+- This environment provides various features and functionalities that allow JavaScript programs to run effectively.
+
+![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/53ba6ed5-607a-47f1-b25e-0f67ac9bf2c9)
+[src](https://vahid.blog/post/2021-03-21-understanding-the-javascript-runtime-environment-and-dom-nodes/)
+
+**A JavaScript runtime typically consists of several key components:**
+
+1. **JavaScript Engine**:
+
+- This is the core component responsible for parsing, interpreting, compiling, and executing JavaScript code.
+- Examples of JavaScript engines include V8 (used in Chrome and Node.js), SpiderMonkey (used in Firefox), and JavaScriptCore (used in Safari).
+
+2. **Call Stack**:
+
+- The call stack is a data structure used to keep track of function calls in JavaScript.
+- It helps manage the flow of execution by tracking which functions are currently being executed and in what order.
+
+3. **Heap**:
+
+- The heap is a region of memory where objects and variables are stored during runtime.
+- This is where dynamically allocated memory for objects, closures, and other data structures is managed.
+
+4. **Event Loop**:
+
+- The event loop is responsible for handling asynchronous operations and non-blocking I/O in JavaScript.
+- It continuously checks for tasks in the task queue and moves them to the call stack when the stack is empty.
+
+5. **Task Queue (Event Queue)**:
+
+- The task queue is where asynchronous tasks and their associated callbacks are placed after they have been processed by browser APIs or other asynchronous operations.
+- Tasks in the queue are processed by the event loop and moved to the call stack for execution when the stack is empty.
+
+6. **Browser APIs (for web environments)**:
+
+- In web browsers, additional APIs are provided for interacting with the browser environment, such as the DOM API for manipulating HTML documents, the Fetch API for making HTTP requests, and the setTimeout/setInterval APIs for scheduling asynchronous tasks.
+
+Together, these components form the JavaScript runtime environment, providing the infrastructure needed for executing JavaScript code and interacting with the surrounding environment, whether it's a web browser or a server-side environment like Node.js.
 
 ### Resources
 
