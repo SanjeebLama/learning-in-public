@@ -1,9 +1,8 @@
 # How to navigate through the feeling of imposter syndrome while preparing for an interview?
 
-**Imposter Syndrome**
 
 <details>
-  <summary> <b>defination</b> </summary>
+  <summary> <b>Imposter Syndrome</b> </summary>
   
 - Imposter syndrome is a psychological phenomenon characterized by _persistent feelings of self-doubt, inadequacy, and the fear of being exposed as a fraud, despite evidence of one's competence and accomplishments_.
 - It often manifests in _high-achieving individuals_, such as software engineers, who struggle to internalize their success and attribute it to factors like luck or deception rather than their own abilities.
