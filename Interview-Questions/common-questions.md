@@ -264,3 +264,179 @@ When responding to the question "Why should we hire you?" in an interview, it's 
 - This experience taught me the importance of effective communication, adaptability, and perseverance in overcoming obstacles, and it has strengthened my ability to lead complex projects under pressure."
 
 </details>
+
+### Q6. Tell me about a time you showed leadership.
+
+<details>
+  <summary> <b>Click to view the answer.</b> </summary>
+  
+Respond to this kind of question with a compelling _story_ that uses the "SAR" framework: situation, action, and results.
+ 
+1. __Describe the situation.__
+
+- Talk about the initial events that occurred.
+- What were the problems that you were experiencing?
+- What needed to be solved and what resources did you have--or not have?
+- This is a really key part of the story, so it should be about **three to four sentences**long.
+
+2. **Get into the action.**
+
+- Speak about the key milestones that you went through
+- Tell them what you did to turn the situation around.
+- Don't go into too much detail though.
+- It should only be about _two to three sentences_, and try to use active verbs, things like “I implemented” or “I persuaded”.
+
+3. **Show the results.**
+
+- Let them know how well things turned out, how the problems were solved and what you may have learned along the way.
+- Try to include a clincher at the end, like dollars saved or improved profitability. It drives home that you did a great thing.
+
+**Example**
+"In my role as a project manager at XYZ Company, I led a team to launch a new product amidst tight deadlines and numerous challenges. I fostered open communication, made tough decisions when necessary, and remained calm under pressure. One notable instance was when we faced a major technical issue just before the launch. I proactively worked with the team to find a solution, leveraging my technical expertise. Despite setbacks, we successfully launched the product on time, exceeding sales targets by 20%. This experience reinforced the importance of effective leadership, teamwork, and resilience."
+
+</details>
+
+### Q7. What are your salary expectations?
+
+<details>
+  <summary> <b>Click to view the answer.</b> </summary>
+  
+> Don't give a specific number. RANGE
+
+1. **Give them a salary range.**
+
+- Let them know there’s room to negotiate (instead of starting with a specific number).
+- Avoid going too low though, because that's going to work against your interests.
+- And don’t go too high either, or you may freeze yourself out of the opportunity.
+
+2. **Do some neutral research.**
+
+- Give them a reasonable place to start from.
+- R&D: Then they’ll have to base their compensation at least on those numbers because you've let them know what other similar organizations are giving to employees who do that job.
+
+3. **Bring up signing bonuses.**
+
+- Doing this can create a win-win situation for both parties.
+- At the end of a negotiation, asking for extra money up top is often a way to bridge the gap between what you want and what you’re being offered.
+
+**Example Response:**
+
+I appreciate the opportunity to discuss compensation. Based on my research and understanding of the industry standards for this position, as well as considering my qualifications and experience, I am seeking a salary in the range of [insert range]. However, I'm open to discussing the overall compensation package, including benefits and opportunities for growth and development.
+
+</details>
+
+### Q8. What kind of tech team dynamic do you excel in?
+
+<details>
+  <summary> <b>Click to view the answer.</b> </summary>
+
+1. **Show that you’ve done your homework**
+
+- Let them know that you’ve researched the company.
+- Use tools like LinkedIn, Glassdoor and other networking platforms to find out how the company operates, makes decisions, and shapes its work.
+
+2. **Demonstrate self-awareness**
+
+- Companies care that you know what you want, the conditions in which you excel, and how you will show flexibility to adapt to varying styles.
+- A lot of behavioral situations have no right or wrong answer but are a window into your self-awareness and preference given the impact of engineering teams and products.
+
+Self-aware candidates know what they want, know which working conditions help them thrive, and know their comfort level with adapting to varying working styles.
+
+- Don’t automatically customize your answer for the company. This is your chance to show what matters to you.
+- Be sure to research the company and how its culture plays out day to day.
+- Explain how your working style will shape your operations if you were to get the job and accept it.
+
+</details>
+
+### Q9. Let’s say there are two kinds of tech workers: the innovators and the executors. Which of these categories do you fit into?
+
+<details>
+  <summary> <b>Click to view the answer.</b> </summary>
+
+1. **Feel free to ask questions**
+
+- You should ask if the company feels engineers can be either innovators or executors—but not both.
+- Another follow-up question could be whether the company believes that an engineer can alternate between those roles.
+
+2. **Frame the choice in terms of culture and role**
+
+- It is easiest to work backwards from what makes the role successful.
+- Anchor the answer in the success metrics, use the company culture as a foundation, and describe your own working style as the guide.
+
+3. **Make a case for what you want**
+
+- The answer to this question depends on your current level of experience and what you’re seeing for yourself in your next role.
+- Whether you are a strategic thinker who prefers cross-functional alignment, or conversely if you prefer brass tacks executions, use this opportunity to share your thoughts.
+
+- Pause for a few moments and understand what the choices presented mean to you.
+- Explain how the choices will impact the role.
+- Explain how your approach will set you and the company up for success.
+
+</details>
+
+### Q10. How do you measure success in an engineering project?
+
+<details>
+  <summary> <b>Click to view the answer.</b> </summary>
+
+1. **Pick a product and tie it to a mission**
+
+- Just as you need to design a system before coding it, you will want to identify your goals before defining success.
+
+2. **Define success**
+
+- Explain what a good outcome looks like and how it may vary on a case-by-case basis.
+
+3. **Demonstrate metrics and/or evidence**
+
+- Show how you will validate and evolve your success measurements with time.
+
+- Make sure you build products to achieve a goal rather than just as a technical exercise.
+- Measure on an ongoing basis because routine measurements and continual improvements are key to innovation.
+- Demonstrate how you would make different technical decisions when data dictates it. This proves that these measurements make a difference.
+
+</details>
+
+### Q11. How would you drive alignment among senior leadership to help accelerate decisions?
+
+<details>
+  <summary> <b>Click to view the answer.</b> </summary>
+
+1. **Set context**
+
+- Explain who your leadership would be and why it may be hard, yet crucial, to drive alignment.
+
+2. **Provide examples**
+
+- Offer specific ways you would help the leaders see the world as you see it - such as showing facts, choices, timelines, and risks.
+- This helps them better understand why you need certain resources as they make decisions.
+
+3. **Show impact**
+
+- Use metrics and evidence to show the effectiveness of your arguments and strategy.
+
+</details>
+
+### Q12. Tell me about a time you disagreed with a fellow engineer and how that issue was resolved.
+
+<details>
+  <summary> <b>Click to view the answer.</b> </summary>
+
+1. **Set context**
+
+- Introduce the problem objectively despite the temptation to start with your own point of view.
+- You want the interviewer to understand the issue and then work your way forward.
+
+2. **Explain how it began and evolved**
+
+- Having set the stage, explain the disagreement and how it started and developed into a clear contrast.
+
+3. **Describe how it ended**
+
+- It is vital to bring closure on the issue and explain your part in the resolution.
+
+- Explain the issue clearly before jumping into the details.
+- Think of these answers as episodic: what was needed, what were the choices, why was there a disagreement, and how was it resolved. Having a clear structure helps the interviewer keep track.
+- Explain what you learned from this episode and how it helped you and the team.
+
+</details>
