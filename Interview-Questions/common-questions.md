@@ -58,6 +58,8 @@
 2. Tell a story about a work experience.
 3. Be sure the strengths you share are aligned to the role you want.
 
+**Example Response:**
+
 - One of my greatest strengths is my ability to _adapt and learn quickly_ in fast-paced environments.
 - As a frontend developer, I've had to keep up with rapidly evolving technologies and industry trends to deliver innovative solutions.
 - For example, when our team encountered a project with a tight deadline and required knowledge of a new framework, I took the initiative to dive into learning it independently.
@@ -66,7 +68,7 @@
 
 </details>
 
-### Q2. What is your greatest strength?
+### Q2. What is your greatest weakness?
 
 <details>
   <summary> <b>Click to view the answer.</b> </summary>
@@ -103,6 +105,8 @@
 
 - Conclude your response by expressing your willingness to learn and grow, emphasizing that you see addressing weaknesses as an ongoing process.
 - That shows that you've got commitment to solving that problem and addressing it.
+
+**Example Response:**
 
 - "One area I've identified for improvement is my tendency to get overly focused on perfectionism.
 - While attention to detail is crucial in frontend development, I've learned that striving for perfection on every task can sometimes lead to unnecessary delays or a reluctance to delegate.
@@ -165,6 +169,8 @@ Here's a step-by-step approach to effectively answer the question "Why should we
 
 When responding to the question "Why should we hire you?" in an interview, it's an opportunity to showcase your unique combination of skills, experience, and qualities that make you the ideal candidate for the role. Here's a sample response:
 
+**Example Response:**
+
 - You should hire me because I bring a proven track record of success in frontend development, coupled with a passion for creating exceptional user experiences.
 - With over two years of experience in startups and international IT firms, I've honed my skills in crafting visually stunning interfaces and optimizing web performance to drive business objectives.
 - Additionally, my recognition as Hero of the Month and winning awards for hackathon contributions highlight my ability to deliver tangible results and contribute positively to team dynamics.
@@ -210,6 +216,10 @@ When responding to the question "Why should we hire you?" in an interview, it's 
 - Your company's focus on innovation and commitment to employee development resonates with my career goals, and
 - I believe this role aligns perfectly with what I'm looking for in my next step.
 
+**Example Response:**
+
+"I made the decision to leave my previous role due to a challenging work environment that was negatively impacting my physical and mental well-being. Despite my efforts to navigate the situation, I ultimately prioritized my health and well-being. I'm now eager to transition into a more positive and supportive work environment where I can thrive and contribute effectively."
+
 </details>
 
 ### Q5. Describe your most challenging project.
@@ -244,7 +254,7 @@ When responding to the question "Why should we hire you?" in an interview, it's 
 - Reflect on what you learned from the experience and how it has contributed to your growth and development as a professional.
 - Discuss any insights or key takeaways that you gained from overcoming the challenges.
 
-Example Response:
+**Example Response:**
 
 - In my previous role, I was tasked with leading a project to overhaul our company's website to improve user experience and functionality.
 - The project had a tight deadline and required coordination across multiple teams.
