@@ -8,6 +8,9 @@
 - makes it easier to evolve APIs over time, and enables powerful developer tools.
 - single endpoint
 
+![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/44397e62-b1b6-4d25-97b3-79c74c858acd)
+
+
 ### Rest API drawbacks:
 
 1. Ovefetching
