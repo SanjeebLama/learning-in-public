@@ -279,6 +279,45 @@ This table provides a comparison of key features and characteristics of CSR, SSG
 
 </details>
 
+### Q19. React Fragments
+
+<details>
+  <summary> <b>Click to view the answer.</b> </summary>
+
+- React Fragments are used to group multiple elements without adding an extra node to the DOM.
+
+- They allow you to return multiple elements from a component's render method without needing to wrap them in a parent element like a `<div>`.
+
+**Here are a few reasons why React Fragments are useful:**
+
+1. **Avoiding Extra DOM Elements**:
+
+- In React, when you return multiple elements from a component's render method, they must be wrapped in a single parent element.
+
+- Using a React Fragment, you can group these elements without introducing an extra DOM node. This helps maintain a clean and semantically meaningful DOM structure.
+
+2. **Reducing Boilerplate Code**:
+
+- Without Fragments, you might have to introduce unnecessary wrapper elements (e.g., `<div>`) solely for the purpose of satisfying the single parent element requirement.
+
+- Fragments eliminate this need, resulting in cleaner and more concise code.
+
+3. **Improved Performance**:
+
+- Since React Fragments don't add extra nodes to the DOM, they can lead to better performance by reducing the overall size of the rendered output.
+
+- This is especially beneficial when dealing with large lists or deeply nested components.
+
+4. **Semantic Clarity**:
+
+- Fragments allow you to group elements logically without introducing any additional meaning or semantics to your markup.
+
+- This helps maintain the intended structure and hierarchy of your components without cluttering the DOM with unnecessary elements.
+
+In summary, React Fragments provide a convenient way to group elements without introducing extra nodes to the DOM, resulting in cleaner code, improved performance, and better semantic clarity.
+
+</details>
+
 ## Resources:
 
 - https://hackernoon.com/30-nextjs-interview-questions-get-ready-for-your-dream-job
