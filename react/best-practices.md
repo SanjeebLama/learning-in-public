@@ -86,17 +86,17 @@ _Here's a breakdown of the concept:
 _
 
 1. **State vs. Regular Variables**:
-   <!-- TODO: Add Image here  -->
+  ![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/65edaaa6-ad20-48a0-9423-30cc07bd5db6)
 
    - State (managed via `useState` hook or `this.state` in class components) is used for data that influences the component's appearance or behavior and should trigger re-renders when updated.
    - Regular variables (declared using `let` or `const` outside the component function or class) are used for data that doesn't affect the component's rendering and doesn't need to trigger re-renders.
 
-2. **Avoid Unnecessary Re-Renders**:
+3. **Avoid Unnecessary Re-Renders**:
 
    - If data doesn't affect the component's rendering, there's no need to store it in state. Using state for such data can lead to unnecessary re-renders when that data changes, even if those changes don't impact the UI.
    - By using regular variables for non-rendering data, you can prevent unnecessary re-renders and optimize the performance of your React components.
 
-3. **Example**:
+4. **Example**:
 
    ```javascript
    import React from "react";
@@ -384,6 +384,8 @@ In summary, thinking in state transitions involves updating React component stat
   <summary> <b>Click to view the answer.</b> </summary>
 "_Thinking in React_" is a process that emphasizes understanding and approaching UI development in React.js by breaking it down into several steps:
 
+![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/d7093037-d76b-463a-869b-6494b1a982d8)
+
 1. **Start with a Mock**: Begin by visualizing the UI design or sketching it out to understand the components needed and their interactions.
 
 2. **Identify Components**: Break down the UI into reusable components based on their responsibilities and functionalities.
@@ -402,7 +404,7 @@ In summary, thinking in state transitions involves updating React component stat
 
 By following the "Thinking in React" process, developers can effectively design, develop, and maintain React applications, resulting in more scalable, modular, and maintainable codebases.
 
-<!-- TODO: Add Image here  -->
+  
 </details>
 
 ### State Management
