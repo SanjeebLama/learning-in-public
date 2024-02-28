@@ -9,6 +9,6 @@ The purpose of this notebook is to serve as a comprehensive resource for both my
 In this notebook, you'll find a mix of topics that reflect my innate curiosity and diverse interests. While my primary focus lies in web development and frontend technologies, I also delve into various technical subjects relevant to my professional growth.
 
 ## Connect with Me
-Connect with me on [LinkedIn](https://www.linkedin.com/in/sanjeeblama) and [Twitter](https://twitter.com/_Sanjeeb) to stay updated on my latest learning adventures and engage in discussions about technology, programming, and lifelong learning. I'd love to hear your feedback and insights as we embark on this learning journey together!
+Connect with me on [LinkedIn](https://www.linkedin.com/in/sanjeeblama) and [YouTube](https://www.youtube.com/@impossible_code) to stay updated on my latest learning adventures and engage in discussions about technology, programming, and lifelong learning. I'd love to hear your feedback and insights as we embark on this learning journey together!
 
 Let's embark on this journey of continuous learning and growth together! 🚀
