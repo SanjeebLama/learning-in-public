@@ -86,17 +86,17 @@ _Here's a breakdown of the concept:
 _
 
 1. **State vs. Regular Variables**:
-  ![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/65edaaa6-ad20-48a0-9423-30cc07bd5db6)
+   ![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/65edaaa6-ad20-48a0-9423-30cc07bd5db6)
 
    - State (managed via `useState` hook or `this.state` in class components) is used for data that influences the component's appearance or behavior and should trigger re-renders when updated.
    - Regular variables (declared using `let` or `const` outside the component function or class) are used for data that doesn't affect the component's rendering and doesn't need to trigger re-renders.
 
-3. **Avoid Unnecessary Re-Renders**:
+2. **Avoid Unnecessary Re-Renders**:
 
    - If data doesn't affect the component's rendering, there's no need to store it in state. Using state for such data can lead to unnecessary re-renders when that data changes, even if those changes don't impact the UI.
    - By using regular variables for non-rendering data, you can prevent unnecessary re-renders and optimize the performance of your React components.
 
-4. **Example**:
+3. **Example**:
 
    ```javascript
    import React from "react";
@@ -404,7 +404,6 @@ In summary, thinking in state transitions involves updating React component stat
 
 By following the "Thinking in React" process, developers can effectively design, develop, and maintain React applications, resulting in more scalable, modular, and maintainable codebases.
 
-  
 </details>
 
 ### State Management
@@ -412,7 +411,7 @@ By following the "Thinking in React" process, developers can effectively design,
 <details>
   <summary> <b>Click to view the answer.</b> </summary>
 
-- State management in React refers to the management and manipulation of the state data within a React application.
+- State management in React refers to the management and manipulation of the state data within a React application. _deciding when to create pieces of state, what types of state are necessary, where to place each piece of state, and how data flows through app_
 
 - State represents the current condition or data of a component and can be altered over time in response to user actions, server responses, or other events.
 
@@ -476,5 +475,252 @@ By following the "Thinking in React" process, developers can effectively design,
 10. **Testing**: Write tests to verify the behavior of components and state management logic. Test both the initial rendering and state changes to ensure that components behave as expected under different scenarios.
 
 By following these best practices, you can effectively manage state in your React applications, leading to cleaner, more maintainable code and better user experiences.
+
+</details>
+
+### Lifting state up in React with best practices
+
+<details>
+  <summary> <b>Click to view the answer.</b> </summary>
+
+- Lifting state up in React is a technique used to manage shared state among multiple components by moving the state to a common ancestor component.
+
+- This allows different child components to access and update the shared state as needed.
+
+// TODO: Add STATE: Image WHEN AND WHERE?
+
+**Example**:
+
+- Let's say we have a simple counter application with two buttons: one for incrementing the counter and one for decrementing it.
+
+- We want both buttons to interact with the same counter value.
+
+```tsx
+import React, { useState } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  const increment = () => {
+    setCount(count + 1);
+  };
+
+  const decrement = () => {
+    setCount(count - 1);
+  };
+
+  return (
+    <div>
+      <h2>Counter: {count}</h2>
+      <button onClick={increment}>Increment</button>
+      <button onClick={decrement}>Decrement</button>
+    </div>
+  );
+}
+
+export default Counter;
+```
+
+- In this example, the `count` state is managed within the `Counter` component.
+
+- _However, what if we want to use the counter value in another component as well? We can lift the `count` state up to a common ancestor component and pass it down to the `Counter` component as a prop_.
+
+```tsx
+import React, { useState } from "react";
+import Counter from "./Counter";
+
+function App() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <h1>Counter App</h1>
+      <Counter count={count} setCount={setCount} />
+      <p>Counter Value: {count}</p>
+    </div>
+  );
+}
+
+export default App;
+```
+
+- Now, the `App` component manages the `count` state, and it passes down both the `count` value and the `setCount` function as props to the `Counter` component.
+
+- This way, both the `Counter` component and the `App` component can interact with the same counter value.
+
+Here's how the `Counter` component would look like in TypeScript with JSX (`.tsx`):
+
+```tsx
+import React from "react";
+
+interface CounterProps {
+  count: number;
+  setCount: React.Dispatch<React.SetStateAction<number>>;
+}
+
+const Counter: React.FC<CounterProps> = ({ count, setCount }) => {
+  const increment = () => {
+    setCount(count + 1);
+  };
+
+  const decrement = () => {
+    setCount(count - 1);
+  };
+
+  return (
+    <div>
+      <h2>Counter: {count}</h2>
+      <button onClick={increment}>Increment</button>
+      <button onClick={decrement}>Decrement</button>
+    </div>
+  );
+};
+
+export default Counter;
+```
+
+- We define a TypeScript interface `CounterProps` to specify the props expected by the `Counter` component. It includes a `count` prop of type `number` and a `setCount` prop of type `React.Dispatch<React.SetStateAction<number>>`. This type is used to represent the function returned by `useState` that can update the `count` state.
+
+- We declare the `Counter` component as a functional component (`React.FC`) that takes `CounterProps` as its props.
+
+- Within the component, we use destructuring to access the `count` and `setCount` props.
+
+- The `increment` and `decrement` functions update the `count` state using the `setCount` function.
+
+**Importance and Best Practices**:
+
+1. **Data Sharing**:
+
+   - Lifting state up enables components to share data and communicate with each other.
+
+   - This is especially useful when multiple components need access to the same data.
+
+2. **Single Source of Truth**:
+
+   - By lifting state up to a common ancestor component, you maintain a single source of truth for the shared state.
+
+   - This helps prevent data inconsistencies and makes your application easier to understand and maintain.
+
+3. **Flexibility**:
+
+   - Lifting state up allows you to easily reorganize and refactor your components without having to rewrite state management logic.
+
+   - It promotes a more flexible and scalable codebase.
+
+4. **Performance**:
+
+   - Lifting state up can also improve performance by reducing unnecessary re-renders of components lower in the component tree.
+
+   - If a state value changes, only the components that depend on that state will re-render, rather than the entire subtree.
+
+In summary, lifting state up is a powerful pattern in React that promotes data sharing, maintainability, flexibility, and performance in your applications. It's important to identify when to lift state up based on your application's requirements and to follow best practices to ensure clean and efficient code.
+
+</details>
+
+### Deriving State
+
+<details>
+  <summary> <b>Click to view the answer.</b> </summary>
+
+TODO: Add image DERIVING STATE
+
+Deriving state in React involves calculating new state values based on existing state or props. It's essential to approach state derivation with care to ensure your components remain efficient, maintainable, and bug-free. Let's discuss some common pitfalls, best practices, and examples:
+
+### Bad Practices:
+
+1. **Direct Mutation of State**:
+
+   - **Bad Code**:
+
+     ```tsx
+     const [count, setCount] = useState(0);
+
+     // Increment count by 1 directly
+     const handleIncrement = () => {
+       count++; // Directly mutating state
+       setCount(count);
+     };
+     ```
+
+   - **Explanation**: Directly mutating state without using the `setCount` function can lead to unexpected behavior, as React may not detect the change and trigger a re-render.
+
+2. **State Derivation Based on Outdated State**:
+
+   - **Bad Code**:
+
+     ```tsx
+     const [count, setCount] = useState(0);
+
+     // Increment count by 1 based on outdated state
+     const handleIncrement = () => {
+       setCount(count + 1); // Based on outdated state
+     };
+     ```
+
+   - **Explanation**: When deriving new state based on existing state, always use the updater function form of `setState` to ensure you're working with the latest state value.
+
+### Best Practices:
+
+1. **Using Updater Function with useState**:
+
+   - **Good Code**:
+
+     ```tsx
+     const [count, setCount] = useState(0);
+
+     // Increment count by 1 using updater function
+     const handleIncrement = () => {
+       setCount((prevCount) => prevCount + 1);
+     };
+     ```
+
+   - **Explanation**: Use the updater function provided by `useState` to derive new state based on the previous state. This ensures that you're always working with the latest state value.
+
+2. **Memoization for Complex Derivations**:
+
+   - **Good Code**:
+
+     ```tsx
+     const [data, setData] = useState(initialData);
+
+     // Derive filteredData based on data using useMemo
+     const filteredData = useMemo(() => {
+       return data.filter((item) => item.isActive);
+     }, [data]);
+     ```
+
+   - **Explanation**: For complex state derivations, consider using `useMemo` hook to memoize the derived value. This prevents unnecessary recalculations and improves performance, especially in components with frequent re-renders.
+
+3. **Separation of Concerns**:
+
+   - **Good Code**:
+
+     ```tsx
+     const [inputValue, setInputValue] = useState("");
+     const [filteredData, setFilteredData] = useState([]);
+
+     // Update inputValue based on user input
+     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+       setInputValue(e.target.value);
+     };
+
+     // Derive filteredData based on inputValue
+     useEffect(() => {
+       const filtered = originalData.filter((item) =>
+         item.name.includes(inputValue)
+       );
+       setFilteredData(filtered);
+     }, [inputValue]);
+     ```
+
+   - **Explanation**: Separate state management concerns and derived state calculations into separate variables and functions. This improves code readability, maintainability, and debugging.
+
+### Conclusion:
+
+- When deriving state in React components, always ensure that you're following best practices to maintain code quality, performance, and reliability.
+
+- Avoid direct mutation of state, use updater functions provided by `useState`, consider memoization for complex state derivations, and separate concerns for better code organization.
+
+- By adhering to these practices, you can create React components that are efficient, robust, and easy to maintain.
 
 </details>
