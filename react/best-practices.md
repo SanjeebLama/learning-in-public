@@ -487,7 +487,7 @@ By following these best practices, you can effectively manage state in your Reac
 
 - This allows different child components to access and update the shared state as needed.
 
-// TODO: Add STATE: Image WHEN AND WHERE?
+![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/cff06b00-f748-4199-8abf-596b53ee7bfe)
 
 **Example**:
 
@@ -622,7 +622,7 @@ In summary, lifting state up is a powerful pattern in React that promotes data s
 <details>
   <summary> <b>Click to view the answer.</b> </summary>
 
-TODO: Add image DERIVING STATE
+![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/11aa226e-ce4f-45f0-91bd-3f17c8c0040a)
 
 Deriving state in React involves calculating new state values based on existing state or props. It's essential to approach state derivation with care to ensure your components remain efficient, maintainable, and bug-free. Let's discuss some common pitfalls, best practices, and examples:
 
