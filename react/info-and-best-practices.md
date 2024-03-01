@@ -858,22 +858,20 @@ By following these best practices and leveraging the `children` prop effectively
 <details>
   <summary> <b>Click to view the answer.</b> </summary>
 
-  ![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/404e7579-a606-466f-8035-62104a451619)
+![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/404e7579-a606-466f-8035-62104a451619)
 
-  
-  ![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/929e7f0e-a93c-46e7-bb0d-d00867acb04c)
+![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/929e7f0e-a93c-46e7-bb0d-d00867acb04c)
 
-- Be aware that creating a new component creates a new abstraction. Abstractions 
-have a cost, because more abstractions require more mental energy to switch back 
-and forth between components. So try not to create new components too early
-- Name a component according to what it does or what it displays. Don’t be afraid of 
-using long component names
+- Be aware that creating a new component creates a new abstraction. Abstractions
+  have a cost, because more abstractions require more mental energy to switch back
+  and forth between components. So try not to create new components too early
+- Name a component according to what it does or what it displays. Don’t be afraid of
+  using long component names
 - Never declare a new component inside another component!
-- Co-locate related components inside the same file. Don’t separate components into 
-different files too early
--  It’s completely normal that an app has components of many different sizes, including 
-very small and huge ones 
-
+- Co-locate related components inside the same file. Don’t separate components into
+  different files too early
+- It’s completely normal that an app has components of many different sizes, including
+  very small and huge ones
 
 </details>
 
