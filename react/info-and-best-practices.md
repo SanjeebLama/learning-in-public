@@ -861,3 +861,32 @@ By following these best practices and leveraging the `children` prop effectively
 Todo : Add image here
 
 </details>
+
+### Component Categories
+
+<details>
+  <summary> <b>Click to view the answer.</b> </summary>
+
+Here's a brief explanation of each category:
+
+1. **Stateless / Presentational Components**:
+
+   - **Description**:
+     These components focus solely on presenting UI elements based on the data they receive via props. They don't manage any state internally.
+   - **Use Cases**:
+     Displaying static content, rendering UI elements based on props, creating reusable UI components without logic or state management.
+
+2. **Stateful Components**:
+
+   - **Description**:
+     Stateful components manage their own state using hooks (`useState`, `useReducer`) or by extending the `React.Component` class. They handle dynamic data, user interactions, and side effects.
+   - **Use Cases**:
+     Managing and updating dynamic data and UI states, handling user input and interactions, performing data fetching operations and side effects.
+
+3. **Structural Components**:
+   - **Description**:
+     These components are responsible for organizing the layout and managing the flow of data and state between other components. They often don't have a significant UI presence but focus on structuring the application.
+   - **Use Cases**:
+     Defining layout structures like headers, footers, or sidebars, providing context providers or higher-order components for data sharing, handling routing and navigation in single-page applications.
+
+</details>
