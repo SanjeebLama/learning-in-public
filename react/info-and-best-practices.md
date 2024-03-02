@@ -909,7 +909,8 @@ Here's a brief explanation of each category:
 <details>
   <summary> <b>Click to view the answer.</b> </summary>
 
-// TODO: Add What is Component Composition image
+![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/7606c3c4-6f9c-4740-a90b-d50ad66425a5)
+
 
 **Prop drilling:**
 
@@ -1372,7 +1373,8 @@ In summary, both approaches have their pros and cons, and the choice between the
 
 <details>
   <summary> <b>Click to view the answer.</b> </summary>
+![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/20578731-5e45-40e3-a50c-a024f973ba38)
 
-# TODO Add Image- how components are displayed on the screen
+![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/9d3203a3-70e6-4cf1-bfa3-3da6a2eb3f34)
 
 </details>
