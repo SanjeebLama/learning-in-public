@@ -853,7 +853,7 @@ By following these best practices and leveraging the `children` prop effectively
 
 ### [React use](https://github.com/streamich/react-use)
 
-### Component Sized matters
+### Component Size matters
 
 <details>
   <summary> <b>Click to view the answer.</b> </summary>
@@ -901,5 +901,478 @@ Here's a brief explanation of each category:
      These components are responsible for organizing the layout and managing the flow of data and state between other components. They often don't have a significant UI presence but focus on structuring the application.
    - **Use Cases**:
      Defining layout structures like headers, footers, or sidebars, providing context providers or higher-order components for data sharing, handling routing and navigation in single-page applications.
+
+</details>
+
+### Prop Drilling and Component composition
+
+<details>
+  <summary> <b>Click to view the answer.</b> </summary>
+
+// TODO: Add What is Component Composition image
+
+**Prop drilling:**
+
+```tsx
+import { useState } from "react";
+
+const tempMovieData = [
+  {
+    imdbID: "tt1375666",
+    Title: "Inception",
+    Year: "2010",
+    Poster:
+      "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg",
+  },
+];
+
+const tempWatchedData = [
+  {
+    imdbID: "tt1375666",
+    Title: "Inception",
+    Year: "2010",
+    Poster:
+      "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg",
+    runtime: 148,
+    imdbRating: 8.8,
+    userRating: 10,
+  },
+];
+
+const average = (arr) =>
+  arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
+
+export default function App() {
+  const [query, setQuery] = useState("");
+  const [movies, setMovies] = useState(tempMovieData);
+  const [watched, setWatched] = useState(tempWatchedData);
+  const [isOpen1, setIsOpen1] = useState(true);
+  const [isOpen2, setIsOpen2] = useState(true);
+
+  const avgImdbRating = average(watched.map((movie) => movie.imdbRating));
+  const avgUserRating = average(watched.map((movie) => movie.userRating));
+  const avgRuntime = average(watched.map((movie) => movie.runtime));
+
+  return (
+    <>
+      <nav className="nav-bar">
+        <div className="logo">
+          <span role="img">🍿</span>
+          <h1>usePopcorn</h1>
+        </div>
+        <input
+          className="search"
+          type="text"
+          placeholder="Search movies..."
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        />
+        <p className="num-results">
+          Found <strong>{movies.length}</strong> results
+        </p>
+      </nav>
+
+      <main className="main">
+        <div className="box">
+          <button
+            className="btn-toggle"
+            onClick={() => setIsOpen1((open) => !open)}
+          >
+            {isOpen1 ? "–" : "+"}
+          </button>
+          {isOpen1 && (
+            <ul className="list">
+              {movies?.map((movie) => (
+                <li key={movie.imdbID}>
+                  <img src={movie.Poster} alt={`${movie.Title} poster`} />
+                  <h3>{movie.Title}</h3>
+                  <div>
+                    <p>
+                      <span>🗓</span>
+                      <span>{movie.Year}</span>
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+
+        <div className="box">
+          <button
+            className="btn-toggle"
+            onClick={() => setIsOpen2((open) => !open)}
+          >
+            {isOpen2 ? "–" : "+"}
+          </button>
+          {isOpen2 && (
+            <>
+              <div className="summary">
+                <h2>Movies you watched</h2>
+                <div>
+                  <p>
+                    <span>#️⃣</span>
+                    <span>{watched.length} movies</span>
+                  </p>
+                  <p>
+                    <span>⭐️</span>
+                    <span>{avgImdbRating}</span>
+                  </p>
+                  <p>
+                    <span>🌟</span>
+                    <span>{avgUserRating}</span>
+                  </p>
+                  <p>
+                    <span>⏳</span>
+                    <span>{avgRuntime} min</span>
+                  </p>
+                </div>
+              </div>
+
+              <ul className="list">
+                {watched.map((movie) => (
+                  <li key={movie.imdbID}>
+                    <img src={movie.Poster} alt={`${movie.Title} poster`} />
+                    <h3>{movie.Title}</h3>
+                    <div>
+                      <p>
+                        <span>⭐️</span>
+                        <span>{movie.imdbRating}</span>
+                      </p>
+                      <p>
+                        <span>🌟</span>
+                        <span>{movie.userRating}</span>
+                      </p>
+                      <p>
+                        <span>⏳</span>
+                        <span>{movie.runtime} min</span>
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+        </div>
+      </main>
+    </>
+  );
+}
+```
+
+### Component Composition
+
+```tsx
+import { useState } from "react";
+
+const tempMovieData = [
+  {
+    imdbID: "tt1375666",
+    Title: "Inception",
+    Year: "2010",
+    Poster:
+      "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg",
+  },
+];
+
+const tempWatchedData = [
+  {
+    imdbID: "tt1375666",
+    Title: "Inception",
+    Year: "2010",
+    Poster:
+      "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg",
+    runtime: 148,
+    imdbRating: 8.8,
+    userRating: 10,
+  },
+];
+
+const average = (arr) =>
+  arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
+
+export default function App() {
+  const [movies, setMovies] = useState(tempMovieData);
+  const [watched, setWatched] = useState(tempWatchedData);
+
+  return (
+    <>
+      <NavBar>
+        <Search />
+        <NumResults movies={movies} />
+      </NavBar>
+
+      <Main>
+        <Box>
+          <MovieList movies={movies} />
+        </Box>
+
+        <Box>
+          <WatchedSummary watched={watched} />
+          <WatchedMoviesList watched={watched} />
+        </Box>
+      </Main>
+    </>
+  );
+}
+
+function NavBar({ children }) {
+  return (
+    <nav className="nav-bar">
+      <Logo />
+      {children}
+    </nav>
+  );
+}
+
+function Logo() {
+  return (
+    <div className="logo">
+      <span role="img">🍿</span>
+      <h1>usePopcorn</h1>
+    </div>
+  );
+}
+
+function Search() {
+  const [query, setQuery] = useState("");
+
+  return (
+    <input
+      className="search"
+      type="text"
+      placeholder="Search movies..."
+      value={query}
+      onChange={(e) => setQuery(e.target.value)}
+    />
+  );
+}
+
+function NumResults({ movies }) {
+  return (
+    <p className="num-results">
+      Found <strong>{movies.length}</strong> results
+    </p>
+  );
+}
+
+function Main({ children }) {
+  return <main className="main">{children}</main>;
+}
+
+function Box({ children }) {
+  const [isOpen, setIsOpen] = useState(true);
+
+  return (
+    <div className="box">
+      <button className="btn-toggle" onClick={() => setIsOpen((open) => !open)}>
+        {isOpen ? "–" : "+"}
+      </button>
+
+      {isOpen && children}
+    </div>
+  );
+}
+
+function MovieList({ movies }) {
+  return (
+    <ul className="list">
+      {movies?.map((movie) => (
+        <Movie movie={movie} key={movie.imdbID} />
+      ))}
+    </ul>
+  );
+}
+
+function Movie({ movie }) {
+  return (
+    <li>
+      <img src={movie.Poster} alt={`${movie.Title} poster`} />
+      <h3>{movie.Title}</h3>
+      <div>
+        <p>
+          <span>🗓</span>
+          <span>{movie.Year}</span>
+        </p>
+      </div>
+    </li>
+  );
+}
+
+function WatchedSummary({ watched }) {
+  const avgImdbRating = average(watched.map((movie) => movie.imdbRating));
+  const avgUserRating = average(watched.map((movie) => movie.userRating));
+  const avgRuntime = average(watched.map((movie) => movie.runtime));
+
+  return (
+    <div className="summary">
+      <h2>Movies you watched</h2>
+      <div>
+        <p>
+          <span>#️⃣</span>
+          <span>{watched.length} movies</span>
+        </p>
+        <p>
+          <span>⭐️</span>
+          <span>{avgImdbRating}</span>
+        </p>
+        <p>
+          <span>🌟</span>
+          <span>{avgUserRating}</span>
+        </p>
+        <p>
+          <span>⏳</span>
+          <span>{avgRuntime} min</span>
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function WatchedMoviesList({ watched }) {
+  return (
+    <ul className="list">
+      {watched.map((movie) => (
+        <WatchedMovie movie={movie} key={movie.imdbID} />
+      ))}
+    </ul>
+  );
+}
+
+function WatchedMovie({ movie }) {
+  return (
+    <li>
+      <img src={movie.Poster} alt={`${movie.Title} poster`} />
+      <h3>{movie.Title}</h3>
+      <div>
+        <p>
+          <span>⭐️</span>
+          <span>{movie.imdbRating}</span>
+        </p>
+        <p>
+          <span>🌟</span>
+          <span>{movie.userRating}</span>
+        </p>
+        <p>
+          <span>⏳</span>
+          <span>{movie.runtime} min</span>
+        </p>
+      </div>
+    </li>
+  );
+}
+```
+
+</details>
+
+### Passing elements as prop alternative to `children`
+
+<details>
+  <summary> <b>Click to view the answer.</b> </summary>
+
+- In React, instead of using the `children` prop to pass JSX elements as children, you can explicitly define and pass elements as props to achieve more clarity and control over component composition.
+
+- This approach is particularly useful when you want to pass specific elements to a component rather than relying on the `children` prop.
+
+- Here's an explanation, example code in TypeScript (`.tsx`), and some best practices:
+
+### Explanation:
+
+- **Explicit Props**: Instead of relying on the `children` prop, you define explicit props in your component's interface or type definition to accept specific JSX elements.
+
+- **Enhanced Clarity**: This approach provides enhanced clarity and readability, as it clearly indicates which elements are expected to be passed to the component.
+
+- **Improved Type Safety**: By explicitly defining props for elements, you can ensure type safety and catch potential errors at compile time, especially when using TypeScript.
+
+- **Flexibility**: It offers more flexibility and control over component composition, allowing you to pass different elements to achieve specific layouts or functionality.
+
+### Example Code in TypeScript (`.tsx`):
+
+```tsx
+import React from "react";
+
+interface CardProps {
+  title: string;
+  // Define explicit props for header and content
+  header: React.ReactElement;
+  content: React.ReactElement;
+}
+
+const Card: React.FC<CardProps> = ({ title, header, content }) => {
+  return (
+    <div className="card">
+      {/* Render the header element */}
+      <div className="header">{header}</div>
+      <div className="content">
+        {/* Render the content element */}
+        {content}
+      </div>
+    </div>
+  );
+};
+
+const App: React.FC = () => {
+  return (
+    <div className="app">
+      {/* Pass specific elements as props to the Card component */}
+      <Card
+        title="Example Card"
+        header={<h2>This is the header</h2>}
+        content={<p>This is some content inside the card.</p>}
+      />
+    </div>
+  );
+};
+
+export default App;
+```
+
+### Best Practices:
+
+- **Explicit Props Naming**: Choose descriptive names for props that represent specific elements to enhance readability and maintainability.
+- **Type Safety**: Utilize TypeScript or PropTypes to define the types of props for elements, ensuring type safety and catching potential errors early.
+- **Encapsulation**: Consider encapsulating elements within dedicated components or variables before passing them as props to maintain component encapsulation and separation of concerns.
+- **Component Composition**: Use this approach strategically for component composition, especially when you need to pass different elements to achieve specific layouts or functionality.
+
+By following these best practices and utilizing explicit props for passing elements, you can enhance the clarity, type safety, and flexibility of your React components, leading to more maintainable and readable codebases.
+
+`implicitly vs explicitly`
+
+Here's a short comparison between passing the `children` prop implicitly and defining elements explicitly as props:
+
+1. **Passing `children` Prop Implicitly**:
+
+   - **Pros**:
+     - Simplicity: It's straightforward to use and requires minimal setup. You can pass any JSX elements between the component's opening and closing tags without specifying additional props.
+     - Conciseness: It reduces the need for defining explicit props, making the component usage more concise.
+   - **Cons**:
+     - Lack of Clarity: It can make the component usage less clear, as it's not immediately obvious what type of content should be passed as children.
+     - Reduced Control: It provides less control over component composition and may lead to ambiguity regarding the structure of the component's content.
+
+2. **Defining Elements Explicitly as Props**:
+   - **Pros**:
+     - Clarity: It offers enhanced clarity by explicitly defining props for specific elements, making it clear what type of content is expected.
+     - Control: It provides more control over component composition, allowing you to specify exactly which elements should be passed as props.
+     - Type Safety: It improves type safety, especially when using TypeScript, as you can define the types of props for elements, catching potential errors at compile time.
+   - **Cons**:
+     - Increased Boilerplate: It requires additional setup to define and pass explicit props, potentially leading to increased boilerplate code.
+     - Slightly More Complex: It may be slightly more complex than using the `children` prop implicitly, especially for simple cases where the content structure is straightforward.
+
+**Which One is Better?**:
+
+- The choice between passing the `children` prop implicitly and defining elements explicitly as props depends on factors such as the complexity of the component, the desired level of clarity and control, and personal preference.
+- For simple components or cases where flexibility and conciseness are more important, passing the `children` prop implicitly may be suitable.
+- For more complex components or cases where clarity, control, and type safety are priorities, defining elements explicitly as props is generally better.
+
+In summary, both approaches have their pros and cons, and the choice between them should be based on the specific requirements and preferences of your project.
+
+</details>
+
+### BTS of React
+
+<details>
+  <summary> <b>Click to view the answer.</b> </summary>
+
+# TODO Add Image- how components are displayed on the screen
 
 </details>
