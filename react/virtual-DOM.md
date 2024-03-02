@@ -18,3 +18,36 @@ The Virtual DOM in React is a lightweight copy of the real DOM (Document Object 
 - Reconciliation in React is the process of comparing the Virtual DOM (representing the current state of your UI) with the previous Virtual DOM (representing the previous state of your UI) and _determining the minimal set of changes needed to update the actual DOM_ (Document Object Model) to reflect the new state.
 
 - This process ensures that React efficiently updates only the parts of the UI that have changed, rather than re-rendering the entire UI from scratch.
+
+## Detail Explanation:
+
+1. Render trigger
+
+   - Initial render
+   - State change in one or more component instances
+
+**How are renders triggered?**
+
+- The render process is triggered for the entire application.
+
+  - This doesn't mean entire DOM is updated.
+  - In react rendering is only about calling the component functions and figuring out how much DOM should be updated.
+
+- In practice, it looks like React only renders the component where the state update happens, but that's not how it works behind the scene.
+
+- Renders are not trigger immediately, but scheduled for when the JS engine has some free time. There's also batching of multiple setState calls in event handler.
+
+**Rendering Phase:**
+
+2. Rendering:
+
+   - React calls the component functions and figure out how much DOM should be updated
+
+   > In react, rendering is NOT updating the DOM or displaying elements on the screen. _Rendering only happens internally inside React, it **doesnot produce visual change** ._
+
+3. Commit:
+
+   - React actually writes to the DOM, updating, inserting, and deleting elements.
+
+4. Browser Paint:
+   - Here is exactly where the visual change takes place
