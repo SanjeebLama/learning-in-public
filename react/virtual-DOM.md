@@ -21,6 +21,9 @@ The Virtual DOM in React is a lightweight copy of the real DOM (Document Object 
 
 ## Detail Explanation:
 
+![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/a82ee6f5-bd3c-4e53-8521-0bc935ca0c8f)
+
+
 1. Render trigger
 
    - Initial render
@@ -37,6 +40,9 @@ The Virtual DOM in React is a lightweight copy of the real DOM (Document Object 
 
 - Renders are not trigger immediately, but scheduled for when the JS engine has some free time. There's also batching of multiple setState calls in event handler.
 
+![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/ee003f6e-7101-478a-a293-216dc2ca01ab)
+
+
 **Rendering Phase:**
 
 2. Rendering:
@@ -44,6 +50,14 @@ The Virtual DOM in React is a lightweight copy of the real DOM (Document Object 
    - React calls the component functions and figure out how much DOM should be updated
 
    > In react, rendering is NOT updating the DOM or displaying elements on the screen. _Rendering only happens internally inside React, it **doesnot produce visual change** ._
+![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/74f15a38-a984-4b2a-8a8f-c16dae8c2fc4)
+
+![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/823eda87-fff7-40ce-be87-c23d5751a149)
+
+![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/c129fe68-2107-4800-a4b0-e6e4c6229bf9)
+
+![image](https://github.com/SanjeebLama/learning-in-public/assets/51410633/94239ca6-488b-45d7-a17f-68796d47dfd2)
+
 
 3. Commit:
 
