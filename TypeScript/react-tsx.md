@@ -322,3 +322,7 @@ function DelayedEffect(props: { timerMs: number }) {
 ```
 
 ## [useRef](https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/hooks#useref)
+
+## [React TypeScript](https://react-typescript-cheatsheet.netlify.app/)
+
+## [TypeScript](https://www.typescriptlang.org/docs/handbook/)
