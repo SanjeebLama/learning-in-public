@@ -94,7 +94,7 @@ In essence, handles are auto-generated unique identifiers that you can access an
 
 - You can’t use contains to check for an object in an array of objects.
 
-```
+```liquid
 {% if product.tags contains 'healing' %}
   This potion contains restorative properties.
 {% endif %}
@@ -268,7 +268,7 @@ The hyphens (-) in Liquid code are used for controlling whitespace.
 
 **Example:**
 
-```
+```liquid
 {% for i in (1..5) -%}
   {%- if i == 4 -%}
     {% continue %}
@@ -291,7 +291,7 @@ Here's how the hyphens are used in the provided code:
 
 -%}: Similarly, the hyphen (-) here ensures that any whitespace immediately following the {% and preceding the -%} is removed.
 
-<details>
+</details>
 
 <br/>
 <br/>
@@ -386,21 +386,21 @@ HTML tags render HTML elements using Shopify-specific attributes.
 
 ## A. [Forms](https://shopify.dev/docs/api/liquid/tags/form)
 
-Generates an HTML <form> tag, including any required <input> tags to submit the form to a specific endpoint.
+Generates an HTML `<form>` tag, including any required `<input>` tags to submit the form to a specific endpoint.
 
 Because there are many different form types available in Shopify themes, the form tag requires a type. Depending on the form type, an additional parameter might be required.
 
 ## B. [styles](https://shopify.dev/docs/api/liquid/tags/style)
 
-Generates an HTML <style> tag with an attribute of data-shopify.
+Generates an HTML `<style>` tag with an attribute of data-shopify.
 
-```
+```liquid
 {% style %}
   CSS_rules
 {% endstyle %}
 ```
 
-```
+```liquid
 {% style %}
   .h1 {
     color: {{ settings.colors_accent_1 }};
@@ -420,7 +420,7 @@ repeatedly run blocks of code.
 
 - Every for loop has an associated **forloop object** with information about the loop.
 
-```
+```liquid
 {% for variable in array %}
   expression
 {% endfor %}
@@ -432,7 +432,7 @@ repeatedly run blocks of code.
 
 - limit the number of iterations
 
-```
+```liquid
 {% for variable in array limit: number %}
   expression
 {% endfor %}
@@ -442,7 +442,7 @@ repeatedly run blocks of code.
 
 - You can specify a 1-based index to start iterating at using the offset parameter.
 
-```
+```liquid
 {% for product in collection.products offset: 2 -%}
   {{ product.title }}
 {%- endfor %}
@@ -452,13 +452,13 @@ repeatedly run blocks of code.
 
 - you can specify a numeric range to iterate over.
 
-```
+```liquid
 {% for variable in (number..number) %}
   expression
 {% endfor %}
 ```
 
-```
+```liquid
 % for i in (1..3) -%}
   {{ i }}
 {%- endfor %}
@@ -487,7 +487,7 @@ Output
 
 - You can iterate in reverse order using the reversed parameter.
 
-```
+```liquid
 {% for variable in array reversed %}
   expression
 {% endfor %}
@@ -497,7 +497,7 @@ Output
 
 - Allows you to specify a default expression to execute when a for loop has zero length.
 
-```
+```liquid
 {% for variable in array %}
   first_expression
 {% else %}
@@ -510,7 +510,7 @@ Output
 - stops a for loop from iterating
 - {% break %}
 
-```
+```liquid
 {% for i in (1..5) -%}
   {%- if i == 4 -%}
     {% break %}
@@ -563,7 +563,7 @@ one
 
 When the cycle tag is used in Liquid, it starts by outputting the first value in the sequence provided. Then, each time the cycle tag is encountered again, it moves to the next value in the sequence. If it reaches the end of the sequence, it starts over from the beginning.
 
-```
+```liquid
 <!-- Iteration 1 -->
 {% for i in (1..4) -%}
   {% cycle 'one', 'two', 'three' %}
@@ -605,7 +605,7 @@ two
 
 </details>
 
-```
+```liquid
 <!-- Iteration 3 -->
 {% for i in (1..4) -%}
   {% cycle 'group_1': 'one', 'two', 'three' %}
@@ -641,3 +641,17 @@ one
   Similarly, the cycle tag outputs 'one' because it's the first value associated with the named group 'group_2'.
 
 </details>
+
+# tablerow
+
+- Generates HTML table rows for every item in an array.
+
+- The tablerow tag must be wrapped in HTML <table> and </table> tags.
+
+- Every tablerow loop has an associated tablerowloop object with information about the loop.
+
+```liquid
+{% tablerow variable in array %}
+  expression
+{% endtablerow %}
+```
