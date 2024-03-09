@@ -705,7 +705,7 @@ sessionStorage.removeItem("theme");
 
 </details>
 
-### Q19. IndexedDB
+### Q19. postMessage()
 
 <details>
   <summary> <b>Click to view the answer.</b> </summary>
@@ -905,7 +905,7 @@ In summary, JavaScript knows when a Promise is fulfilled and executes the callba
 
 </details>
 
-### Q26. How does Javascript know when a Promise is fulfilled and executes the callback?
+### Q26. Promises vs Observables
 
 <details>
   <summary> <b>Click to view the answer.</b> </summary>
