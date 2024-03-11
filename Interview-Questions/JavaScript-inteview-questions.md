@@ -959,3 +959,136 @@ In summary, `Promise.all()` resolves when all promises in the array are successf
 > In summary, AJAX allows web pages to communicate with a server in the background, fetch data, and update content dynamically without requiring a full page reload, resulting in a smoother and more interactive user experience.
 
 </details>
+
+### Slice vs Splice
+
+<details>
+  <summary> <b>Click to view the answer.</b> </summary>
+
+| Feature                        | slice                                                                                                                                                                                                                                                                                                          | splice                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Syntax                         | `array.slice(start, end)`                                                                                                                                                                                                                                                                                      | `array.splice(start, deleteCount, item1, item2, ...)`                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| Description                    | Returns a shallow copy of a portion of an array into a new array without modifying the original array.                                                                                                                                                                                                         | Changes the contents of an array by removing or replacing existing elements and/or adding new elements in place.                                                                                                                                                                                                                                                                                                                                                                                                          |
+| Modification of Original Array | Does not modify the original array.                                                                                                                                                                                                                                                                            | Modifies the original array.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Parameters                     | - `start`: The beginning index (inclusive) of the portion to extract. If negative, it counts from the end of the array. <br> - `end` (optional): The ending index (exclusive) of the portion to extract. If negative, it counts from the end of the array. If omitted, slice extracts to the end of the array. | - `start`: The index at which to start changing the array. If negative, it indicates an offset from the end of the array. <br> - `deleteCount` (optional): The number of elements to remove. If omitted or larger than the remaining number of elements, deleteCount will remove all elements from start to the end of the array. <br> - `item1`, `item2`, ... (optional): The elements to add to the array, beginning at the start index. If no elements are specified, splice will only remove elements from the array. |
+| Return Value                   | A new array containing the extracted elements.                                                                                                                                                                                                                                                                 | An array containing the deleted elements, if any.                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| Use Cases                      | - Copying parts of an array without altering the original array. <br> - Extracting a subset of an array for manipulation or display.                                                                                                                                                                           | - Removing elements from an array. <br> - Adding elements into an array at a specific position. <br> - Replacing elements within an array.                                                                                                                                                                                                                                                                                                                                                                                |
+
+**Example:**
+
+```javascript
+const array = [1, 2, 3, 4, 5];
+
+// Using slice
+const slicedArray = array.slice(1, 4); // Returns [2, 3, 4]
+console.log(slicedArray); // Output: [2, 3, 4]
+console.log(array); // Output: [1, 2, 3, 4, 5] (Original array remains unchanged)
+
+// Using splice
+const deletedElements = array.splice(1, 2, 6, 7); // Removes elements [2, 3] and adds elements 6 and 7 at index 1
+console.log(deletedElements); // Output: [2, 3] (Deleted elements)
+console.log(array); // Output: [1, 6, 7, 4, 5] (Original array modified)
+```
+
+</details>
+
+### Shallow Clone vs deep Clone
+
+<details>
+  <summary> <b>Click to view the answer.</b> </summary>
+
+1. **Shallow Clone:**
+
+   - A shallow clone creates a new object or array, but it only copies the top-level structure of the original object or array. In other words, it creates a new object with the same properties as the original object, but the properties themselves are not cloned. Similarly, for arrays, a shallow clone creates a new array with the same elements as the original array, but if those elements are objects or arrays, they are not cloned; rather, their references are copied.
+
+   - Shallow clones are quick and easy to perform but may not be sufficient if the original object contains nested objects or arrays that need to be cloned separately.
+
+   **Example:**
+
+   ```javascript
+   const originalObject = { a: 1, b: { c: 2 } };
+
+   // Shallow clone using object spread syntax (for objects)
+   const shallowCloneObject = { ...originalObject };
+
+   // Shallow clone using slice method (for arrays)
+   const originalArray = [1, { a: 2 }, 3];
+   const shallowCloneArray = originalArray.slice();
+
+   // Modifying the cloned objects to demonstrate shallow nature
+   shallowCloneObject.a = 10;
+   shallowCloneObject.b.c = 20; // This also modifies originalObject
+   shallowCloneArray[1].a = 100; // This also modifies originalArray
+
+   console.log(originalObject); // { a: 1, b: { c: 20 } }
+   console.log(originalArray); // [1, { a: 100 }, 3]
+   ```
+
+2. **Deep Clone:**
+
+   - A deep clone creates a new object or array and recursively copies all nested objects and arrays within the original object or array. In other words, it creates a completely independent copy where changes to the clone do not affect the original and vice versa.
+   - Deep cloning ensures that all levels of nested objects or arrays are also cloned, making it more suitable for scenarios where you need a fully independent copy of the original data structure.
+
+   **Example:**
+   Deep cloning can be done using various libraries such as Lodash, or you can implement a custom deep clone function. Here's an example using Lodash:
+
+   ```javascript
+   const _ = require("lodash");
+
+   const originalObject = { a: 1, b: { c: 2 } };
+
+   // Deep clone using Lodash
+   const deepCloneObject = _.cloneDeep(originalObject);
+
+   // Modifying the cloned object to demonstrate deep nature
+   deepCloneObject.a = 10;
+   deepCloneObject.b.c = 20; // This does not modify originalObject
+
+   console.log(originalObject); // { a: 1, b: { c: 2 } }
+   console.log(deepCloneObject); // { a: 10, b: { c: 20 } }
+   ```
+
+   ```javascript
+   function deepClone(obj) {
+     // Handle non-object types and null
+     if (typeof obj !== "object" || obj === null) {
+       return obj;
+     }
+
+     // Create an empty object or array to store the cloned data
+     const clone = Array.isArray(obj) ? [] : {};
+
+     // Iterate over each key in the original object or array
+     for (let key in obj) {
+       // Check if the property belongs to the object itself, not inherited
+       if (obj.hasOwnProperty(key)) {
+         // Recursively clone nested objects or arrays
+         clone[key] = deepClone(obj[key]);
+       }
+     }
+
+     return clone;
+   }
+   ```
+
+```javascript
+// Deep clone using JSON.stringify and JSON.parse
+const deepCloneObject = JSON.parse(JSON.stringify(originalObject));
+
+// Modifying the cloned object to demonstrate deep nature
+deepCloneObject.a = 10;
+deepCloneObject.b.c = 20; // This does not modify originalObject
+
+console.log(originalObject); // { a: 1, b: { c: 2 } }
+console.log(deepCloneObject); // { a: 10, b: { c: 20 } }
+```
+
+In summary, shallow cloning creates a new object or array with copied top-level properties or elements, while deep cloning creates a new object or array with all nested properties or elements recursively cloned, ensuring complete independence from the original data structure.
+
+</details>
+
+# One liner
+
+### Promises
+
+A promise in JavaScript represents the eventual completion or failure of an asynchronous operation and its resulting value.
